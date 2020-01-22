@@ -1,0 +1,126 @@
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1579698058-pr-74zld-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-9wppz[0m
+{"level":"warn","ts":1579702300.9416485,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1579702300.942021,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1579698058-pr-74zld-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-prtqn[0m
+{"level":"warn","ts":1579702302.0116744,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1579702302.0144973,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1579698058-pr-74zld-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1579698058-pr-74zld-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-bdd-nh-1579698058-pr-29dcf[0m
+{"level":"warn","ts":1579702308.0982485,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1579702308.272315,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/bdd-nh-1579698058.git @ master in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1579698058-pr-74zld-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:46e24434e8d0b260ef5d6ad7fb93c50c246efce9,1:9ab7dd7d20274df9c7c81fc007332dfb5bc73610
+DEBUG: ran git fetch --unshallow origin 9ab7dd7d20274df9c7c81fc007332dfb5bc73610: 46e24434e8d0b260ef5d6ad7fb93c50c246efce9: in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard 46e24434e8d0b260ef5d6ad7fb93c50c246efce9 in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge 9ab7dd7d20274df9c7c81fc007332dfb5bc73610 in 
+Merged SHA 9ab7dd7d20274df9c7c81fc007332dfb5bc73610 with commit message 'My first PR commit' into base branch master
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1579698058-pr-74zld-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npmrc[0m
+Command "credential" is deprecated, it will be removed on Feb 1 2020.  This is replaced by Tekton's mounted secrets
+WARNING: failed to find Secret npm-token in namespace **
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1579698058-pr-74zld-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-install[0m
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN REPLACE_ME@1.0.0 No repository field.
+npm WARN REPLACE_ME@1.0.0 No license field.
+
+up to date in 0.243s
+found 0 vulnerabilities
+
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1579698058-pr-74zld-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-test[0m
+
+> REPLACE_ME@1.0.0 test /workspace/source
+> echo "no test specified" && exit 0
+
+no test specified
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1579698058-pr-74zld-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image node:9-slim           
+2020/01/22 14:11:52 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0000] Error while retrieving image from cache: getting file info: stat /workspace/sha256:0e0175bbe4f8d9d104590d8d2c591017874e30977cb71aaff1cf6fa99479575c: no such file or directory 
+[36mINFO[0m[0000] Downloading base image node:9-slim           
+2020/01/22 14:11:53 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0000] Executing 0 build triggers                   
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] ENV PORT 8080                                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] WORKDIR /usr/src/app                         
+[36mINFO[0m[0000] cmd: workdir                                 
+[36mINFO[0m[0000] Changed working directory to /usr/src/app    
+[36mINFO[0m[0000] Creating directory /usr/src/app              
+[36mINFO[0m[0000] Taking snapshot of files...                  
+[36mINFO[0m[0000] Using files from context: [/workspace/source] 
+[36mINFO[0m[0000] COPY . .                                     
+[36mINFO[0m[0000] Taking snapshot of files...                  
+[36mINFO[0m[0000] CMD ["npm", "start"]                         
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+2020/01/22 14:11:53 existing blob: sha256:5bba3ecb4cd6374a19da45f2a3db0a9c0804984358b3bb4b666c28944016e5ff
+2020/01/22 14:11:53 existing blob: sha256:196b8e3c919d5639193ba6c6e54774528942041bbc37606631a2250502985c3c
+2020/01/22 14:11:53 existing blob: sha256:a88538b9cd05cfa611e43a25582a95ad7879f6fa708b0386a26b71ee62235bb3
+2020/01/22 14:11:53 existing blob: sha256:7d083412657baa2dafba8d093034ef26f9ed2c90fb6ed95f76bb55aff03ed429
+2020/01/22 14:11:53 existing blob: sha256:e01bd28a434b56ffd2a3fe9aa99b9b69aecca69904843edd30b1ee7150d79904
+2020/01/22 14:11:53 pushed blob: sha256:b67f7fd63edf5d84d051c51f044f552a1259149ceb7385be30531a29bbd4d774
+2020/01/22 14:11:53 pushed blob: sha256:c31653427915f0c045443595099a2bc8c32c82434c4909f3b38a50f72748c06b
+2020/01/22 14:11:53 pushed blob: sha256:970a9286f9a372679ea748e266ffb215d9ee828bf697967a57e80083fbc14cfe
+2020/01/22 14:11:54 296178596335.dkr.ecr.us-east-1.amazonaws.com/cb-kubecd/bdd-nh-1579698058:0.0.0-SNAPSHOT-PR-1-1: digest: sha256:fa1c2ec64311143c18b8a85de507885462a41a8b1d8c571f35d5883e154080ef size: 1404
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1579698058-pr-74zld-1[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1579698058-pr-74zld-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: 296178596335.dkr.ecr.us-east-1.amazonaws.com\/cb-kubecd\/bdd-nh-1579698058|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-1-1/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-1-1" >> requirements.yaml
+** step helm build
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+WARNING: No secrets found on "helm/repos" due: reading the secret "helm/repos" from vault: no secret "helm/repos" not found in vault
+Read credentials for https://storage.googleapis.com/chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+WARNING: No secrets found on "helm/repos" due: reading the secret "helm/repos" from vault: no secret "helm/repos" not found in vault
+Read credentials for http://jenkins-x-chartmuseum:8080 from vault helm/repos
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+WARNING: No secrets found on "helm/repos" due: reading the secret "helm/repos" from vault: no secret "helm/repos" not found in vault
+Read credentials for http://chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1579698058-pr-74zld-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Created environment cb-kubecd-bdd-nh-1579698058-pr-1
+Namespace **-cb-kubecd-bdd-nh-1579698058-pr-1 created 
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    domain: 52.200.76.221.nip.io
+    exposer: Ingress
+    http: "true"
+preview:
+  image:
+    repository: 296178596335.dkr.ecr.us-east-1.amazonaws.com/cb-kubecd/bdd-nh-1579698058
+    tag: 0.0.0-SNAPSHOT-PR-1-1
+
+Updating PipelineActivities cb-kubecd-bdd-nh-1579698058-pr-1-1 which has status 
+Preview application is now available at: http://bdd-nh-1579698058.**-cb-kubecd-bdd-nh-1579698058-pr-1.52.200.76.221.nip.io
